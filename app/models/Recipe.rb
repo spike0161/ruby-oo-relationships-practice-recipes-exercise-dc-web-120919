@@ -33,17 +33,38 @@ class Recipe
           end
         end
 
-        def ingredients
+
+
+        def my_ingredients
+          # takes an array of ingredient instances as argument, associates these ingredients with the recipe
+          RecipeIngredient.all.select do |ingredient|
+          ingredient.recipe == self
+          end
+        end
+
+        # def add_ingredients
+        #   # array_new = []
+        #   # array_new << self.my_ingredients
+        #   # array_new
+        # end
+
+
+        def get_recipe
           # returns all the ingredients for this particular recipe
-          
+          RecipeIngredient.all.select do |ingredient|
+            ingredient.recipe == self
+          end
+        end
+
+        def ingredients
+          self.get_recipe.map do |recipe|
+            recipe.ingredient
+          end
         end
 
         def allergens
           # returns all ingredients (Ingredients class) in this recipe that are allergens for Users(class) in our system
         end
 
-        def add_ingredients
-          # takes an array of ingredient instances as argument, associates these ingredients with the recipe
-        end
 
 end
