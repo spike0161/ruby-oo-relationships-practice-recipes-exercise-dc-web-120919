@@ -2,13 +2,13 @@ require 'pry'
 
 class RecipeCard
 
-  attr_accessor :user, :recipe_name
+  attr_accessor :user, :recipe
 
   @@all = []
 
-      def initialize(user, recipe_name)
+      def initialize(user, recipe)
         @user = user
-        @recipe_name = recipe_name
+        @recipe = recipe
         @@all << self
       end
 

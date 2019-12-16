@@ -29,4 +29,6 @@ puts RecipeIngredient.all
 # recipe1.add_ingredients(sugar)
 puts "Recipe Ingredients"
 puts recipe1.ingredients
+print recipe1.allergens
+puts recipe1.get_user
 # binding.pry

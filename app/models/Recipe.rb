@@ -42,13 +42,6 @@ class Recipe
           end
         end
 
-        # def add_ingredients
-        #   # array_new = []
-        #   # array_new << self.my_ingredients
-        #   # array_new
-        # end
-
-
         def get_recipe
           # returns all the ingredients for this particular recipe
           RecipeIngredient.all.select do |ingredient|
@@ -62,9 +55,24 @@ class Recipe
           end
         end
 
+        def add_ingredients
+          # array_new = []
+          # array_new << self.my_ingredients
+          # array_new
+        end
+
+        def get_user
+          RecipeCard.all.select do |recipe|
+            recipe.user == self
+            binding.pry
+          end
+        end
+
         def allergens
           # returns all ingredients (Ingredients class) in this recipe that are allergens for Users(class) in our system
+
         end
+
 
 
 end
